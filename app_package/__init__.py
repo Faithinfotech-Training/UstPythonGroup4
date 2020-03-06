@@ -7,4 +7,4 @@ app.config.from_object(Config)
 mongo=PyMongo(app)
 
 
-from app_package import batch_routes
+from app_package import batch_routes,course_routes
