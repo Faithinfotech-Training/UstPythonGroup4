@@ -1,13 +1,11 @@
 from flask import render_template,flash,redirect,url_for
-from app_package import app,db,mongo
+from app_package import app,mongo
 from flask_login import current_user,login_user,logout_user,login_required
 from app_package.forms import EnquiryForm,UpdateDataForm,EnquirySearchForm
 
 check=True
 cust_id=0
-@app.route("/")
-def show_home():
-    return render_template("menu.html")
+
 
 @app.route("/enquiryForm", methods=["GET","POST"])
 def enquiry():
@@ -32,7 +30,7 @@ def enquiry():
         tmp=cust_col.insert_one(customer)
         if tmp.inserted_id==cust_id:
             flash("Enquiry Submitted")
-            return redirect(url_for("show_home"))
+            return redirect(url_for("enquiry_data"))
         else:
             flash("Problem adding Details")
             return redirect(url_for("enquiry"))

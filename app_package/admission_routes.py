@@ -1,5 +1,5 @@
 from flask import render_template,flash,redirect,url_for
-from app_package import app,db,mongo
+from app_package import app,mongo
 from flask_login import current_user,login_user,logout_user,login_required
 from app_package.admission_forms import AdmissionSearchForm,AdmissionAddForm
 
@@ -36,7 +36,7 @@ def Admission_add():
             return redirect(url_for("Admissionhome"))
         else:
             flash("Problem in adding Candidate")
-            return redirect(url_for("Admissionform")) 
+            return redirect(url_for("Admissionhome")) 
     else:
         flash(" Cannot submit")
         return redirect(url_for("Admissionhome"))

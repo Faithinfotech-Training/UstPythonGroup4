@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Enquiry List</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    </head>
-<body>
+{% extends "dashboard.html" %}
+{% block content %}
 <h3>Customer Details</h3>
 <table class="table table-bordered">
     <thead class="thead thead-dark">
@@ -33,7 +28,7 @@
       
     </tr>
     {% endfor %}
-</table>       
-<p><a href="{{url_for('show_home')}}">Back</a></p>
-</body>
-</html>
+</table>  
+<br><a class="btn btn-outline-primary btn-lg" href="{{url_for('enquiry')}}">Add Enquiry Form</a><br>
+<br><a class="btn btn-outline-primary btn-lg" href="{{url_for('enquirysearch')}}">Enquiry Search</a><br>
+{% endblock %}
