@@ -1,0 +1,34 @@
+{% extends "dashboard.html" %}
+{% block content %}
+<h3>Customer Details</h3>
+<table class="table table-bordered">
+    <thead class="thead thead-dark">
+        <th>ID</th>
+        <th>NAME</th>
+        <th>STATUS</th>
+        <th>Mobile</th>
+        <th>Interested Course</th>
+        <th>Qualification</th>
+        <th>Year of Passout</th>
+        <th>Place</th>
+        <th>ACTION</th>
+    </thead>  
+    </tr>
+    {% for customer in customers %}
+    <tr>
+        <td>{{customer._id}}</td>
+        <td>{{customer.name}}</td>
+        <td>{{customer.status}}</td>
+        <td>{{customer.phone_number}}</td>
+        <td>{{customer.course}}</td>
+        <td>{{customer.qualification}}</td>
+        <td>{{customer.passout_year}}</td>
+        <td>{{customer.place}}</td>
+        <td><a href="{{url_for('update_customer',enquiry_id=customer._id)}}">Edit Status</a></td>
+      
+    </tr>
+    {% endfor %}
+</table>  
+<br><a class="btn btn-outline-primary btn-lg" href="{{url_for('enquiry')}}">Add Enquiry Form</a><br>
+<br><a class="btn btn-outline-primary btn-lg" href="{{url_for('enquirysearch')}}">Enquiry Search</a><br>
+{% endblock %}

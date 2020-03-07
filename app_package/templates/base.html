@@ -1,31 +1,35 @@
 <!DOCTYPE html>
-<html>
-    <head>
 
+
+<html>
+
+<html lang="en">
+    <head>
         <title>
-            {% if titile %}
-                {{title}}
-            {% else %}
-                Welcome to FlaskTest
-            {% endif %}
+        {% if title %}
+            {{title}}
+        {% else %}
+            Enquiry Section
+        {% endif %}
         </title>
-        <!-- <link rel="stylesheet" href="/static/css/login.css">
-        <link rel="icon" href="static/images/megha.jpg">
-        
-        <img src="/static/images/img.png" height="124">-->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
        
+        <br>
+        <b>WELCOME TO  Academy of Training</b>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
     <body>
-        {% with messages=get_flashed_messages() %}
-            {% if messages %}
+       {%with messages=get_flashed_messages()%}
+            {%if messages%}
             <ul>
-                {% for message in messages %}
+            {%for message in messages%}
                 <li>{{message}}</li>
-            {% endfor %}
+            {%endfor%}
             </ul>
-            {% endif %}
-        {% endwith %}    
-        {% block content %}{% endblock %}
-       
+            {%endif%}
+        {%endwith%}
+       {%block content%}{%endblock%}
     </body>
-<html>
+    </html>
+        
+

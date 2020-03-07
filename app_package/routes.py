@@ -40,7 +40,7 @@ def index():
                 return render_template("adminmenu.html")
             if role==('academic cordinator',):
             
-                return render_template("acedamicmenu.html")
+                return render_template("dashboard.html")
             else:
                 flash("Error")
                 return redirect(url_for("index"))
