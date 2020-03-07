@@ -1,0 +1,35 @@
+
+{%extends "dashboard.html"%}
+{% block content%}
+        
+
+
+
+<h1>FAITH INFOTECH RESOURSE MANAGEMENT</h1>
+   
+    <table class="table table-dark">
+        <thead class="thead thead-dark">
+            <th>ID</th>
+            <th>RESOURCE NAME</th>
+            <th>RESOURCE CAPACITY</th>
+            <th>RESOURCE STATUS</th>
+            <th>RESOURCE RENT</th>
+            <th>TYPE OF USE</th>
+            <th>ACTION</th>
+        </thead>
+        {% for r in resources %}
+            <tr>
+                <td>{{r._id}}</td>
+                <td>{{r.res_name}}</td>
+                <td>{{r.res_capacity}}</td>
+                <td>{{r.res_status}}</td>
+                <td>{{r.res_rent}}</td>
+                <td>{{r.type_of_use}}</td>
+                <td><a href="{{url_for('update_resource',id=r._id)}}">update</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+
+<td><a class="btn btn-primary" href="{{url_for('add_resource')}}">ADD RESOURCES</a></td>
+
+{%endblock%}
