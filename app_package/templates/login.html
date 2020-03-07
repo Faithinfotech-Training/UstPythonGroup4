@@ -19,25 +19,27 @@ font-style:italic;
 
 <form action="{{url_for('index')}}"method="POST" novalidate>
     {{form.hidden_tag()}}
-    <fieldset>
-        <legend>Login</legend>
-        <p>
-        {{form.username.label}}{{form.username(size=32, autofocus=True)}}
+    <table>
+        <tr>
+       <td> {{form.username.label}}</td><td>{{form.username(size=32, autofocus=True)}}
         {% for error in form.username.errors %}
             <span style="color:red;">{{error}}</span>
-        {% endfor %}
+        {% endfor %}</td></tr>
         </p>
         <p>
-        {{form.password.label}}{{form.password(size=32)}}
+        <tr>
+        <td>{{form.password.label}}</td><td>{{form.password(size=32)}}
         {% for error in form.password.errors %}
             <span style="color:red;">{{error}}</span>
-        {% endfor %}
-        </p>
-        
-        <p>
-        {{form.remember_me()}}{{form.remember_me.label}}</p>
-        <p>{{form.submit()}}</p>
-      </fieldset>
+        {% endfor %}</td>
+    </tr>
+    <tr>
+        <td>{{form.remember_me()}}{{form.remember_me.label}}</td>
+    </tr>
+    <tr>
+        <td>{{form.submit()}}</td>
+    </tr>
+    </table>
       
    </form>
    </body>
