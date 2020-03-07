@@ -6,10 +6,6 @@ from app_package.course_forms import AddCourseForm, ModifyCourseForm
 course_id=0
 check=True
 
-@app.route("/")
-def dashboard():
-    return render_template("dashboard.html")
-
 
 @app.route("/display_course")
 def display_course():

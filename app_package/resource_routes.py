@@ -9,6 +9,7 @@ res_id=0
 
 
 
+
 @app.route("/add_resource",methods=["GET","POST"])
 def add_resource():
     global check,res_id
@@ -78,7 +79,7 @@ def update_resource(id):
         return render_template("update_resource.html",form=form,reso=reso)    
         
 
-@app.route("/")
+@app.route("/view_resource")
 def view_resource():
     res_col=mongo.db.resources
     resources=res_col.find()
