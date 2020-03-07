@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{%block content%}
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <div class="formwrapper">    
+        <b>
+            <div class="form-field">
+                    {{form.name.label}}{{form.name(size=32,value=enquiry.name)}}
+                        
+            </div>
+        
+            <div class="form-field">
+                    {{form.email.label}}{{form.email(size=32,value=enquiry.email)}}
+                  
+            </div>
+        
+            <div class="form-field">     
+                    {{form.passout_year.label}}{{form.passout_year(size=32,value=enquiry.passout_year)}}
+                       
+            </div>
+        
+            <div class="form-field">
+                    {{form.phone_number.label}}{{form.phone_number(size=10,value=enquiry.phone_number)}}
+                        
+            </div>
+        
+        
+            <div class="form-field">
+                    {{form.course.label}}{{form.course(value=enquiry.course)}}
+                       
+            </div>
+        
+            <div class="form-field">
+                    {{form.qualification.label}}{{form.qualification(value=enquiry.qualification)}}
+                      
+            </div>
+        
+            <div class="form-field">
+                    {{form.place.label}}{{form.place(size=32,value=enquiry.place)}}
+                       
+            </div>
+        
+            <div class="form-field">
+                    {{form.status.label}}{{form.status(value=enquiry.status)}}
+                        
+            </div>
+                
+                <button class="btn btn-primary">
+                {{form.submit()}}
+                </button>
+            </b>
+            </div>
+</form>
+{%endblock%}

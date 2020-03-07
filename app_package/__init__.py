@@ -10,7 +10,7 @@ app.config.from_object(Config)
 db=SQLAlchemy(app)
 migrate=Migrate(app,db)
 mongo=PyMongo(app)
-login_manager=LoginManager(app)
-login_manager.login_view="index"
+#login_manager=LoginManager(app)
+#login_manager.login_view="index"
 
-from app_package import routes, models
+from app_package import enquiry_routes,admission_routes

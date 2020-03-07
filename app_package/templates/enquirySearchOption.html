@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <fieldset>
+        <legend>Search</legend>
+        <p>{{form.e_type.label}}{{form.e_type( autofocus=True)}}
+        {% for error in form.e_type.errors %}
+            <span style="color:red;">{{error}}</span>
+        {% endfor %}
+        </p>
+        <p>{{form.e_name.label}}{{form.e_name(size=32, autofocus=True)}}
+            {% for error in form.e_name.errors %}
+                <span style="color:red;">{{error}}</span>
+            {% endfor %}
+        </p>
+        <p>{{form.submit()}}</p>
+    </fieldset>
+    <a href="{{url_for('show_home')}}">Back to Home</a>
+</form>
+{% endblock %}
