@@ -1,16 +1,17 @@
 from flask import Flask
 from app_package.config import Config
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
 from flask_pymongo import PyMongo
-from flask_login import LoginManager
 
 app=Flask(__name__)
 app.config.from_object(Config)
-db=SQLAlchemy(app)
-migrate=Migrate(app,db)
 mongo=PyMongo(app)
+<<<<<<< HEAD
 #login_manager=LoginManager(app)
 #login_manager.login_view="index"
 
 from app_package import enquiry_routes,admission_routes
+=======
+
+
+from app_package import batch_routes,course_routes,resource_routes
+>>>>>>> 21d52a27123166d28fb27a267aa64170c1f20309
