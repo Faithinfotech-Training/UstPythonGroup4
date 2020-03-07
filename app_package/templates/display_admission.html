@@ -1,0 +1,42 @@
+
+{% extends "dashboard.html" %}
+{% block content %}
+<h3>Customer Details</h3>
+<table class="table table-bordered">
+    <thead class="thead thead-dark">
+        <th>ID</th>
+        <th>NAME</th>
+        <th>GENDER</th>
+        <th>Mobile</th>
+        <th>EMAIL</th>
+        <th>QUALIFICATION</th>
+        <th>Interested Course</th>
+        <th>Year of Passout</th>
+        <th>STATUS</th>
+        <th>BATCH</th>
+        <th>GUARDIAN NAME</th>
+        <th>GUARD ADDRESS</th>
+        <th>ADDRESS</th>
+    </thead>  
+    </tr>
+    {% for customer in admission %}
+    <tr>
+        <td>{{customer._id}}</td>
+        <td>{{customer.e_name}}</td>
+        <td>{{customer.e_gender}}</td>
+        <td>{{customer.e_phone}}</td>
+        <td>{{customer.e_email}}</td>
+        <td>{{customer.e_qualification}}</td>
+        <td>{{customer.e_course_of_interest}}</td>
+        <td>{{customer.e_year_of_pass}}</td>
+        <td>{{customer.e_status}}</td>
+        <td>{{customer.batch_name}}</td>
+        <td>{{customer.e_guardianname}}</td>
+        <td>{{customer.e_guardianphone}}</td>
+        <td>{{customer.e_address}}</td>
+        
+      
+    </tr>
+    {% endfor %}
+</table>  
+{% endblock %}

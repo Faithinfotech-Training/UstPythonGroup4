@@ -2,72 +2,94 @@
 {%block content%}
 <form action="{{url_for('enquiry')}}" method="POST" novalidate>
     {{form.hidden_tag()}}
-    <div class="formwrapper">      
+    <table class="table table-dark ">
+        <div class="container">
+            <div class="col-6">
+        
         <b>
         
-        <div class="form-field">
-         
-                {{form.name.label}}{{form.name(size=32)}}
-                 {% for error in form.name.errors %}
+        
+         <tr>
+             <td>   {{form.name.label}}{{form.name(size=32)}}</td>
+             <td>   {% for error in form.name.errors %}
                      <span style="color:red;">{{error}}</span>
-                 {% endfor %}
+                 {% endfor %}</td>
+        </tr>
         
         </div> 
 
         <div class="form-field">
-            {{form.email.label}}{{form.email(size=32)}}
-            {% for error in form.email.errors %}
+            <tr>
+           <td> {{form.email.label}}{{form.email(size=32)}}</td>
+           <td>  {% for error in form.email.errors %}
                 <span style="color:red;">{{error}}</span>
-            {% endfor %}
+            {% endfor %}</td>
+            </tr>
         </div>
 
         <div class="form-field">
-                {{form.passout_year.label}}{{form.passout_year(size=32)}}
-                {% for error in form.passout_year.errors %}
+            <tr>
+                    <td>   {{form.passout_year.label}}{{form.passout_year(size=32)}}</td>
+                    <td>   {% for error in form.passout_year.errors %}
                     <span style="color:red;">{{error}}</span>
-                {% endfor %}
+                {% endfor %}</td>
+                </tr>
         </div>
 
         <div class="form-field">
-                {{form.phone_number.label}}{{form.phone_number(size=32)}}
-                {% for error in form.phone_number.errors %}
+            <tr>
+                    <td>  {{form.phone_number.label}}{{form.phone_number(size=32)}}</td>
+                    <td> {% for error in form.phone_number.errors %}
                     <span style="color:red;">{{error}}</span>
-                {% endfor %}
+                {% endfor %}</td>
+                </tr>
         </div>
 
 
         <div class="form-field">
-                {{form.course.label}}{{form.course()}}
-                {% for error in form.course.errors %}
+            <tr>
+                    <td>    {{form.course.label}}{{form.course()}}</td>
+              <td>  {% for error in form.course.errors %}
                     <span style="color:red;">{{error}}</span>
-                {% endfor %}
+                {% endfor %}</td>
+                </tr>
         </div>
 
         <div class="form-field">
-                {{form.qualification.label}}{{form.qualification()}}
-                {% for error in form.qualification.errors %}
+            <tr>
+               <td> {{form.qualification.label}}{{form.qualification()}}</td>
+               <td>   {% for error in form.qualification.errors %}
                     <span style="color:red;">{{error}}</span>
-                {% endfor %}
+                {% endfor %}</td>
+                </tr>
         </div>
 
         <div class="form-field">
-                {{form.place.label}}{{form.place(size=32)}}
-                {% for error in form.place.errors %}
+            <tr>
+                    <td>  {{form.place.label}}{{form.place(size=32)}}</td>
+                    <td>   {% for error in form.place.errors %}
                     <span style="color:red;">{{error}}</span>
-                {% endfor %}
+                {% endfor %}</td>
+                </tr>
         </div>
 
         <div class="form-field">
-                {{form.status.label}}{{form.status()}}
-                {% for error in form.status.errors %}
+            <tr>
+                    <td>  {{form.status.label}}{{form.status()}}</td>
+                    <td>    {% for error in form.status.errors %}
                     <span style="color:red;">{{error}}</span>
-                {% endfor %}
+                {% endfor %}</td>
+                </tr>
         </div>
         
-        <button class="btn btn-primary">
-        {{form.submit()}}
+        <tr><button class="btn btn-primary">
+       <td>{{form.submit()}}</td> 
         </button>
+        </tr>
     </b>
+
     </div>
+    </div>
+    </table>
 </form>
 {%endblock%}

@@ -43,8 +43,8 @@
                     <span style="color:red;">{{error}}</span>
                 {% endfor%}	</td></tr>
   
-            <tr><td>{{f2.e_batch.label}}</td><td>{{f2.e_batch(size=32)}}
-                    {% for error in f2.e_batch.errors %}
+            <tr><td>{{f2.batch_name.label}}</td><td>{{f2.batch_name}}
+                    {% for error in f2.batch_name.errors %}
                         <span style="color:red;">{{error}}</span>
                     {% endfor %}	</td></tr>
         
