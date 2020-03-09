@@ -1,6 +1,16 @@
 {% extends "dashboard.html" %}
 {% block content %}
 <h3>Add Qualification</h3>
+{{form.hidden_tag()}}
+{%with messages=get_flashed_messages()%}
+        {%if messages%}
+        <ul>
+        {%for message in messages%}
+            <li>{{message}}</li>
+        {%endfor%}
+        </ul>
+        {%endif%}
+        {%endwith%}
 
 <table>
 	{% for i in allqual %}

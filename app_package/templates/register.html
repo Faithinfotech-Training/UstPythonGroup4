@@ -49,12 +49,13 @@
         {% endfor %}</td>
         </td></tr>
         <tr><td>
-        {{form.password2.label}}</td><td></td>{{form.password2(size=32)}}
+        {{form.password2.label}}</td><td>{{form.password2(size=32)}}
         {% for error in form.password2.errors %}
             <span style="color:red;">{{error}}</span>
         {% endfor %}</td>
         </td></tr>
         <tr><td>{{form.submit()}}</td></tr>
+        <tr><td><a class="btn btn-primary" href="{{url_for('index')}}">Back</a></td></tr>
     </table>
     
     

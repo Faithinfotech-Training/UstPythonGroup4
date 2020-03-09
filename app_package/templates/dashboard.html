@@ -2,18 +2,22 @@
 <html lang="en">
     <head>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <style>
+        .bg{
+          background-image: url('/static/images/dash.jpg');
+          background-size: cover;
+        }
+      </style>
     </head>
-    <body style="background-image: url('/static/images/menu.jpg');background-size: cover;">
+    <body class="bg">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">TAMS</a>
+        <a class="navbar-brand" href="{{url_for('dashboard')}}">TAMS</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="{{url_for('')}}">HOME <span class="sr-only">(current)</span></a>
-            </li>
+           
             <li class="nav-item">
               <a class="nav-link" href="{{url_for('display_course')}}">COURSE</a>
             </li>
@@ -35,6 +39,33 @@
           </ul>
         </div>
       </nav>
-    {%block content %}{%endblock%}
+      <marquee style="color:blueviolet; margin-top: 5em; font-size: 1.5em;"> WELCOME TO TAMS ACADEMY</marquee>
+     
+      {%block content %}{%endblock%}
     </body>
+    <!-- Footer -->
+<footer class="page-footer font-small cyan darken-3">
+
+    <!-- Footer Elements -->
+    <div class="container">
+  
+      <!-- Grid row-->
+      <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-md-12 py-5">
+          <div class="mb-5 flex-center">
+  
+            
+    </div>
+    <!-- Footer Elements -->
+  
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3"><a>© 2020 Copyright:
+       Group 6</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
     </html>

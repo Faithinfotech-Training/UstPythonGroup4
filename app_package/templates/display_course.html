@@ -2,6 +2,15 @@
 {% block content %}
 
      <h1>FAITH INFOTECH COURSE MANAGEMENT</h1>
+     {%with messages=get_flashed_messages()%}
+        {%if messages%}
+        <ul>
+        {%for message in messages%}
+            <li>{{message}}</li>
+        {%endfor%}
+        </ul>
+        {%endif%}
+        {%endwith%}
      
 <table class="table table-dark">
 

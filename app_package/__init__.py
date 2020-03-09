@@ -14,5 +14,5 @@ login_manager=LoginManager(app)
 login_manager.login_view="index"
 
 
-from app_package import batch_routes,course_routes,resource_routes,enquiry_routes,admission_routes,module_routes,qualification_routes
+from app_package import batch_routes,course_routes,resource_routes,enquiry_routes,admission_routes,module_routes,qualification_routes,routes
 

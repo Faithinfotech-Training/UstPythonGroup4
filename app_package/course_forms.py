@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm 
-from wtforms import StringField, SubmitField, IntegerField, RadioField, TextField
+from wtforms import StringField, SubmitField, IntegerField, RadioField, TextField, TextAreaField 
 from wtforms.validators import DataRequired, EqualTo, ValidationError , NumberRange
 
 
@@ -8,7 +8,7 @@ class AddCourseForm(FlaskForm):
     courseduration=IntegerField("Course Duration:",validators=[DataRequired(),NumberRange(min=1)])
     coursefee=IntegerField("Course Fee:",validators=[DataRequired(),NumberRange(min=1000)])
     coursestatus=RadioField("Course Status:",choices = [('Active','Active'),('Inactive','Inactive')])
-    coursediscription=TextField("Course Discription:",validators=[DataRequired()])
+    coursediscription=TextAreaField("Course Discription:",validators=[DataRequired()])
     submit=SubmitField("Add Course")
 
 class ModifyCourseForm(FlaskForm):
@@ -16,5 +16,5 @@ class ModifyCourseForm(FlaskForm):
     courseduration=IntegerField("Course Duration:",validators=[NumberRange(min=1)])
     coursefee=IntegerField("Course Fee:",validators=[NumberRange(min=1000)])
     coursestatus=RadioField("Course Status:",choices = [('Active','Active'),('Inactive','Inactive')])
-    coursediscription=TextField("Course Discription:")
+    coursediscription=TextAreaField("Course Discription:")
     submit=SubmitField("Modify Course")

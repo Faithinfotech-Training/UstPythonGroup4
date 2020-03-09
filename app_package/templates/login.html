@@ -11,37 +11,46 @@ color:white;
 text-align:center;
 font-style:italic;
  }
+ .back{
+     background-image:url('/static/images/login.jpg');
+     margin: 0%;
+
+ }
+ 
  
 </style>
-<body>
-<h1>training academy</h1>
+<body class="back">
+<h1 style="color: red;">TAMS ACADEMY</h1>
 
-
-<form action="{{url_for('index')}}"method="POST" novalidate>
+<form  action="{{url_for('index')}}"method="POST" novalidate>
     {{form.hidden_tag()}}
+    <div class="container">
+        <div class="col-11">
     <table>
         <tr>
-       <td> {{form.username.label}}</td><td>{{form.username(size=32, autofocus=True)}}
+                <td>{{form.username.label}}</td><td>{{form.username(size=32, autofocus=True)}}
         {% for error in form.username.errors %}
             <span style="color:red;">{{error}}</span>
-        {% endfor %}</td></tr>
+        {% endfor %}</td><br></tr>
         </p>
         <p>
         <tr>
-        <td>{{form.password.label}}</td><td>{{form.password(size=32)}}
+                <br> <td>{{form.password.label}}</td><td>{{form.password(size=32)}}
         {% for error in form.password.errors %}
             <span style="color:red;">{{error}}</span>
-        {% endfor %}</td>
+        {% endfor %}</td><br>
     </tr>
     <tr>
-        <td>{{form.remember_me()}}{{form.remember_me.label}}</td>
+            <td>{{form.remember_me()}}{{form.remember_me.label}}</td>
     </tr>
     <tr>
-        <td>{{form.submit()}}</td>
+            <br><td>{{form.submit()}}</td>
     </tr>
     </table>
-      
+      </div>
+      </div>
    </form>
+   </div>
    </body>
    </html>
    {% endblock %}

@@ -77,6 +77,12 @@ def admission_data():
 @app.route("/modifyAdmissionData/<int:enquiry_id>",methods=["GET","POST"])
 def update_admission(enquiry_id):
     form=AdmissionUpdateForm()
+    batch_col=mongo.db.batchs
+    batch=batch_col.find()
+    lst=[]
+    for i in batch:
+        lst.append((i["batch_name"],i["batch_name"]))
+    form.batch_name.choices=lst
     ad_col=mongo.db.admission
     admission=ad_col.find_one({"_id":enquiry_id})
     if form.validate_on_submit()==True:
