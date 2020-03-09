@@ -4,9 +4,9 @@ from app_package.batch_forms import AddBatchForm, ModifyBatchForm
 
 batch_id=0
 check = True
-@app.route("/", methods=["GET","POST"])
-def index():
-    return render_template("dashboard.html")
+
+
+
 
 @app.route("/display_batchs")
 def display_batchs():
@@ -20,6 +20,19 @@ def add_batch():
     global batch_id
     global check
     form=AddBatchForm()
+    res_col=mongo.db.resources
+    res=res_col.find()
+    lst=[]
+    for i in res:
+        lst.append((i["res_name"],i["res_name"]))
+    form.res_name.choices=lst
+
+    course_col=mongo.db.courses
+    cour=course_col.find()
+    lst=[]
+    for j in cour:
+        lst.append((j["coursename"],j["coursename"]))
+    form.coursename.choices=lst
     if form.validate_on_submit():
         fields=["_id","batch_name","start_date", "end_date", "course_id", "b_status"]
         batch_col=mongo.db.batchs
@@ -72,3 +85,4 @@ def modify_batch(a):
         return redirect(url_for("display_batchs"))
     else:
         return render_template("modify_batch.html",form=form, batch=batch)
+

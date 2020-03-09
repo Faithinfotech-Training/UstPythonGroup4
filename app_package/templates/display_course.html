@@ -2,7 +2,7 @@
 {% block content %}
 
      <h1>FAITH INFOTECH COURSE MANAGEMENT</h1>
-     <li><a  href="{{url_for('add_course')}}">Add a Course</a>
+     
 <table class="table table-dark">
 
     <tr>
@@ -25,6 +25,7 @@
             <td><a href="{{url_for('modify_course',a=course._id)}}">Edit</a></td>
          </tr>
        {% endfor %}
+       <tr><td><a class="btn btn-primary" href="{{url_for('add_course')}}">Add Course</a></td></tr>
          </table>
       
          

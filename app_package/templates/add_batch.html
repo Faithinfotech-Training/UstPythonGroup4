@@ -51,13 +51,16 @@
     </td>
 </tr>
 <tr>
-      <td>
-        {{form.course_id.label}}</td><td>{{form.course_id(size=32)}}
-        {% for error in form.course_id.errors %}
-            <span style="color:red;">{{error}}</span>
-        {% endfor %}
-       </td>
+    <td>{{form.coursename.label}}</td><td>{{form.coursename}}
+    {% for error in form.coursename.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}</td>
     </tr>
+<td>{{form.res_name.label}}</td><td>{{form.res_name}}
+    {% for error in form.res_name.errors %}
+        <span style="color:red;">{{error}}</span>
+    {% endfor %}</td>
+     </tr>
     <tr>
         <td>
         {{form.submit()}}
