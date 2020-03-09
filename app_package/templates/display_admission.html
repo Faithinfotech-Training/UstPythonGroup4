@@ -1,42 +1,60 @@
-
-{% extends "dashboard.html" %}
+{% extends "base.html" %}
 {% block content %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Enquiry List</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+    tr{
+        
+      background-color: whitesmoke;
+    }
+    </style>
+    </head>
+
+<body>
 <h3>Customer Details</h3>
 <table class="table table-bordered">
     <thead class="thead thead-dark">
         <th>ID</th>
         <th>NAME</th>
         <th>GENDER</th>
-        <th>Mobile</th>
+        <th>MOBILE</th>
         <th>EMAIL</th>
         <th>QUALIFICATION</th>
-        <th>Interested Course</th>
-        <th>Year of Passout</th>
+        <th>COURSE</th>
+        <th>YEAR OF PASS</th>
         <th>STATUS</th>
         <th>BATCH</th>
         <th>GUARDIAN NAME</th>
-        <th>GUARD ADDRESS</th>
+        <th>GUARDIAN PHONE</th>
         <th>ADDRESS</th>
+        <th>ACTION</th>
+
     </thead>  
     </tr>
-    {% for customer in admission %}
+    {% for ad in admission %}
     <tr>
-        <td>{{customer._id}}</td>
-        <td>{{customer.e_name}}</td>
-        <td>{{customer.e_gender}}</td>
-        <td>{{customer.e_phone}}</td>
-        <td>{{customer.e_email}}</td>
-        <td>{{customer.e_qualification}}</td>
-        <td>{{customer.e_course_of_interest}}</td>
-        <td>{{customer.e_year_of_pass}}</td>
-        <td>{{customer.e_status}}</td>
-        <td>{{customer.batch_name}}</td>
-        <td>{{customer.e_guardianname}}</td>
-        <td>{{customer.e_guardianphone}}</td>
-        <td>{{customer.e_address}}</td>
-        
+        <td>{{ad._id}}</td>
+        <td>{{ad.e_name}}</td>
+        <td>{{ad.e_gender}}</td>
+        <td>{{ad.e_phone}}</td>
+        <td>{{ad.e_email}}</td>
+        <td>{{ad.e_qualification}}</td>
+        <td>{{ad.e_course_of_interest}}</td>
+        <td>{{ad.e_year_of_pass}}</td>
+        <td>{{ad.e_status}}</td>
+        <td>{{ad.batch_name}}</td>
+        <td>{{ad.e_guardianname}}</td>
+        <td>{{ad.e_guardianphone}}</td>
+        <td>{{ad.e_address}}</td>
+        <td><a href="{{url_for('update_admission',enquiry_id=ad._id)}}">Edit Status</a></td>
       
     </tr>
     {% endfor %}
-</table>  
+</table>       
+
+</body>
+</html>
 {% endblock %}

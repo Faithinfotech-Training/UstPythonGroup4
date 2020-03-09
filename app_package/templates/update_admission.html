@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{%block content%}
+<form action="" method="POST" novalidate>
+    {{form.hidden_tag()}}
+    <div class="formwrapper">    
+        <b>
+            <div class="form-field">
+                    {{form.e_name.label}}{{form.e_name(size=32,value=admission.e_name)}}
+                        
+            </div>
+        
+            <div class="form-field">
+                    {{form.e_email.label}}{{form.e_email(size=32,value=admission.e_email)}}
+                  
+            </div>
+        
+            <div class="form-field">     
+                    {{form.e_year_of_pass.label}}{{form.e_year_of_pass(size=32,value=admission.e_year_of_pass)}}
+                       
+            </div>
+        
+            <div class="form-field">
+                    {{form.e_phone.label}}{{form.e_phone(size=10,value=admission.e_phone)}}
+                        
+            </div>
+        
+        
+            <div class="form-field">
+                    {{form.e_course_of_interest.label}}{{form.e_course_of_interest(value=admission.e_course_of_interest)}}
+                       
+            </div>
+        
+            <div class="form-field">
+                    {{form.e_qualification.label}}{{form.e_qualification(value=admission.e_qualification)}}
+                      
+            </div>
+        
+            
+                
+            <div class="form-field">
+                    {{form.e_gender.label}}{{form.e_gender(value=admission.e_gender)}}
+                        
+            </div>
+            <div class="form-field">
+                    {{form.e_course_of_interest.label}}{{form.e_course_of_interest(value=admission.e_course_of_interest)}}
+                        
+            </div>
+            <div class="form-field">
+                    {{form.e_guardianname.label}}{{form.e_guardianname(value=admission.e_guardianname)}}
+                        
+            </div>
+
+            <div class="form-field">
+                    {{form.e_guardianphone.label}}{{form.e_guardianphone(value=admission.e_guardianphone)}}
+                        
+            </div>
+                <button class="btn btn-primary">
+                {{form.submit()}}
+                </button>
+            </b>
+            </div>
+</form>
+{%endblock%}
