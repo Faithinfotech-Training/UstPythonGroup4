@@ -51,7 +51,7 @@ def add_batch():
             return render_template("add_batch.html", form=form)
         else: 
 
-            values=[batch_id,form.batch_name.data,form.start_date.data,form.end_date.data,form.course_id.data,form.b_status.data]
+            values=[batch_id,form.batch_name.data,form.start_date.data,form.end_date.data,form.coursename.data,form.b_status.data]
             batch=dict(zip(fields,values))
             batch_col=mongo.db.batchs
             tmp=batch_col.insert_one(batch)

@@ -79,7 +79,7 @@ def update_admission(enquiry_id):
     form=AdmissionUpdateForm()
     ad_col=mongo.db.admission
     admission=ad_col.find_one({"_id":enquiry_id})
-    if form.validate_on_submit():
+    if form.validate_on_submit()==True:
         values=dict()
         values["e_course_of_interest"]=form.e_course_of_interest.data
         values["e_gender"]=form.e_gender.data

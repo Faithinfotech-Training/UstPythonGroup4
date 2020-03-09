@@ -38,7 +38,7 @@ def index():
                 return render_template('adminmenu.html', data1=data1)
             
                 return render_template("adminmenu.html")
-            if role==('academic cordinator',):
+            if role==('academiccordinator',):
             
                 return render_template("dashboard.html")
             else:

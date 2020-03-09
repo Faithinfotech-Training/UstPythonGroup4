@@ -44,7 +44,7 @@
                 </tr>
 
             <tr>
-                    <td>  {{form.phone_number.label}}{{form.phone_number(size=32)}}</td>
+                    <td >  {{form.phone_number.label}}{{form.phone_number(size=32)}}</td>
                     <td> {% for error in form.phone_number.errors %}
                     <span style="color:red;">{{error}}</span>
                 {% endfor %}</td>
@@ -58,12 +58,12 @@
                 {% endfor %}</td>
                 </tr>
 
-            <tr>
-               <td> {{form.qualification.label}}{{form.qualification()}}</td>
-               <td>   {% for error in form.qualification.errors %}
-                    <span style="color:red;">{{error}}</span>
-                {% endfor %}</td>
-                </tr>
+                <tr>
+                    <td> {{form.qualification.label}}{{form.qualification()}}</td>
+                    <td>   {% for error in form.qualification.errors %}
+                         <span style="color:red;">{{error}}</span>
+                     {% endfor %}</td>
+                     </tr>
 
             <tr>
                     <td>  {{form.place.label}}{{form.place(size=32)}}</td>
