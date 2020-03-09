@@ -7,7 +7,7 @@ course_id=0
 check=True
 
 
-@app.route("/display_course")
+@app.route("/")
 def display_course():
     course_col=mongo.db.courses
     courses=course_col.find()
