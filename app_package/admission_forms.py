@@ -31,7 +31,7 @@ class AdmissionUpdateForm(FlaskForm):
     e_email=StringField("Email:",validators=[DataRequired()])
     e_qualification=StringField("Highest Qualification:",validators=[DataRequired()])
     e_course_of_interest=StringField("Course Of Interest:",validators=[DataRequired()])
-    e_year_of_pass=IntegerField("Passout Yaer:",validators=[DataRequired()])
+    e_year_of_pass=IntegerField("Passout Year:",validators=[DataRequired()])
     e_status=RadioField("Status:",choices = [('Joined','Joined')])
     batch_name=SelectField("Batch Assigned:",choices=[],coerce=str)
     e_guardianname=StringField("Gaurdian Name:",validators=[DataRequired()])

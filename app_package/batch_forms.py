@@ -16,5 +16,5 @@ class ModifyBatchForm(FlaskForm):
     start_date=DateTimeField("Start Date: ")
     end_date=DateTimeField("End Date: ")
     b_status=RadioField('Status: ', choices = [('Active','Active'),('Inactive','Inactive')])
-    submit=SubmitField("Update")
+    submit=SubmitField("Edit")
     

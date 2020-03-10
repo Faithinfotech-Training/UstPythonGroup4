@@ -15,11 +15,11 @@ class LoginForm(FlaskForm):
 
 
 class RegistrationForm(FlaskForm):
-    fullname=StringField("FULLNAME: ",validators=[validators.required(), validators.Length(min=2, max=35)])
-    username=StringField("USERNAME: ",validators=[validators.required(), validators.Length(min=2, max=35)])
+    fullname=StringField("FULLNAME: ",validators=[validators.required(), validators.Length(min=2, max=35)])  
     mobile=IntegerField("MOBILE :",validators=[DataRequired()])
-    email=StringField("Email:",validators=[DataRequired(),Email()])
+    email=StringField("EMAIL:",validators=[DataRequired(),Email()])
     role_id=RadioField('', choices = [('1','admin'),('2','cordinator')],validators=[DataRequired()])
+    username=StringField("USERNAME: ",validators=[validators.required(), validators.Length(min=2, max=35)])
     password=PasswordField("PASSWORD: ",validators=[validators.required(), validators.Length(min=2, max=35)])
     password2=PasswordField("REPEAT PASSWORD: ",validators=[DataRequired(),EqualTo("password")])
     submit=SubmitField("REGISTER")
@@ -34,8 +34,8 @@ class EnquiryForm(FlaskForm):
     phone_number=IntegerField("Mobile Number:",validators=[DataRequired()])
     email=EmailField("Email:",validators=[validators.DataRequired(),validators.Email()])
     passout_year=IntegerField("Year of Passout:",validators=[DataRequired()])
-    course=SelectField("Courses:",[DataRequired()],choices=[('Btech','Btech'),('Mtech','Mtech'),('MCA','MCA'),('BCA','BCA')])
-    qualification=SelectField("Courses:",[DataRequired()],choices=[('Python','Python'),('Java','Java'),('Javascript','Javascript'),('Propel .NET','Propel >NET')])
+    qualification=SelectField("Qualification:",[DataRequired()],choices=[('Btech','Btech'),('Mtech','Mtech'),('MCA','MCA'),('BCA','BCA')])
+    course=SelectField("Courses:",[DataRequired()],choices=[('Python','Python'),('Java','Java'),('Javascript','Javascript'),('Propel .NET','Propel >NET')])
     place=StringField("Place:",validators=[DataRequired()])
     status=SelectField("Enquiry Status:",[DataRequired()],choices=[('Pending','Pending'),('Interested','Interested'),('Not Interested','Not Interested'),('Exam Passed','Exam Passed'),('Exam Failed','Exam Failed'),('Exam Joined','Exam Joined')])
     submit=SubmitField("Submit")

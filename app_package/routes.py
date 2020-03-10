@@ -28,19 +28,22 @@ def index():
             
             cursor.execute("select role_name from role where role_id=%s", data)
             role=cursor.fetchone()
+            
+
+            cursor.execute("select reg_id from login where username=%s",form.username.data)
+            nid=cursor.fetchone()
+            cursor.execute("select fullname from registration where reg_id=%s",nid)
+            name=cursor.fetchone() 
+            n=str(name)
+            b=n[2:len(n)-3]
+            
             db.close()
 
             if role==('admin',):
-
-                cur = dbs.cursor()
-                cur.execute("SELECT fullname FROM registration")
-                data1 = cur.fetchone()
-                return render_template('adminmenu.html', data1=data1)
-            
-                return render_template("adminmenu.html")
-            if role==('academiccordinator',):
-            
-                return render_template("dashboard.html")
+               
+                return render_template("adminmenu.html",name=b)
+            if role==('academic cordinator',):
+                return render_template("acedamicmenu.html",name=b)      
             else:
                 flash("Error")
                 return redirect(url_for("index"))
@@ -65,6 +68,7 @@ def register():
 
             dba=pymysql.connect("localhost","flaskuser","flaskuser","studdb")
             cursor=dba.cursor()
+            
             cursor.execute("select reg_id from registration where fullname=%s",form.fullname.data)
             regid=cursor.fetchone()
             dba.close()

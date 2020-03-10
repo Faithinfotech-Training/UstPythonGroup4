@@ -3,14 +3,15 @@
 <fieldset>
     <form action="" method="POST" novalidate>
     {{form.hidden_tag()}}
-    <legend>Search</legend>
-    <p>
+    <legend><center>Search</center></legend>
+    <p><center>
         {{form.e_phone.label}}{{form.e_phone(size=32, autofocus=True)}}
         {% for error in form.e_phone.errors %}
             <span style="color:red;">{{error}}</span>
         {% endfor%}	
-    </p>
-    <p>{{form.submit()}}</p>
-    <a href="{{url_for('admission_data')}}">Admitted Students</a>
+    </center></p>
+    <p><center>{{form.submit()}}</center></p>
+    <tr><td><center><a class="btn btn-primary" href="{{url_for('admission_data')}}">Admitted Students</a></center></td></tr> 
+    
 </fieldset>
 {% endblock %}

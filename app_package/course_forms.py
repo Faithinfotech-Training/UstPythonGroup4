@@ -17,4 +17,4 @@ class ModifyCourseForm(FlaskForm):
     coursefee=IntegerField("Course Fee:",validators=[NumberRange(min=1000)])
     coursestatus=RadioField("Course Status:",choices = [('Active','Active'),('Inactive','Inactive')])
     coursediscription=TextAreaField("Course Discription:")
-    submit=SubmitField("Modify Course")
+    submit=SubmitField("Edit Course")
